@@ -82,6 +82,7 @@ export class ItemsPage {
         this.itemService.deleteItem(listItem).subscribe(() => {
         }, err => console.log(err), () => {
             this.items.splice(this.items.indexOf(listItem), 1);
+            this.itemService.shoppingListChanged.emit(this.items);
             this.isLoading = false;
         });
     }

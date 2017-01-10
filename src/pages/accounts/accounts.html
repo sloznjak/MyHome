@@ -33,7 +33,7 @@
                         {{account.amount}} KN
                     </div>
                 </div>
-                <div *ngIf="toggleDelete" style="width: 20%; float: right; text-align: right; margin-top: 10px;"><i class="fa fa-trash fa-1d5x myRed" (click)="deleteAccount(account)"></i></div>
+                <div *ngIf="toggleDelete" style="width: 20%; float: right; text-align: right; margin-top: 10px; z-index:50"><i class="fa fa-trash fa-1d5x myRed" (click)="deleteAccount(account)"></i></div>
                 <div *ngIf="!toggleDelete" style="width: 20%; float: right; text-align: right; margin-top: 10px;"><i class="fa fa-info-circle fa-1d5x" (click)="accountDetails(account)"></i></div>
                 <div style="clear: both;"></div>
             </ion-item>

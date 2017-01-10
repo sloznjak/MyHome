@@ -5,6 +5,8 @@ import {Account} from "../../model/Account";
 import {AccountService} from "../../services/account.service";
 import {AddAccountModal} from "../shared/modal/addAccount/addAccount";
 import {AccountDetailsPage} from "./accountDetails/accountDetails";
+import {RemoveFromAccountModal} from "../shared/modal/removeFromAccount/removeFromAccount";
+import {AddToAccountModal} from "../shared/modal/addToAccount/addToAccount";
 
 /*
  Generated class for the Tasks page.
@@ -77,6 +79,50 @@ export class AccountsPage {
             }
         });
         addAccountModal.present();
+    }
+
+    addToAccount(account, item){
+        item.close();
+        let addToAccountModal = this.modalCtrl.create(AddToAccountModal, {account: account});
+        addToAccountModal.onDidDismiss(acc => {
+            if(acc){
+                this.isLoading = true;
+                console.log(acc);
+                this.accService.updateAccount(acc).subscribe(res => {
+                    console.log(res);
+                    this.accounts.forEach(account => {
+                        if(account.id == res.id){
+                            account.amount = res.amount;
+                        }
+                    })
+                }, err => console.log(err));
+                this.accService.accountsChanged.emit(this.accounts);
+                this.isLoading = false;
+            }
+        });
+        addToAccountModal.present();
+    }
+
+    removeFromAccount(account, item){
+        item.close();
+        let removeFromAccountModal = this.modalCtrl.create(RemoveFromAccountModal, {account: account});
+        removeFromAccountModal.onDidDismiss(acc => {
+            if(acc){
+                this.isLoading = true;
+                console.log(acc);
+                this.accService.updateAccount(acc).subscribe(res => {
+                    console.log(res);
+                    this.accounts.forEach(account => {
+                        if(account.id == res.id){
+                            account.amount = res.amount;
+                        }
+                    })
+                }, err => console.log(err));
+                this.accService.accountsChanged.emit(this.accounts);
+                this.isLoading = false;
+            }
+        });
+        removeFromAccountModal.present();
     }
 
     deleteAccount(account){
