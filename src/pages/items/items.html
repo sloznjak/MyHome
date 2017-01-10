@@ -1,0 +1,45 @@
+<!--
+  Generated template for the Tasks page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar color="myDark">
+        <ion-title color="myGreen">Shopping list</ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only (click)="clearShoppingList()">
+                <i class="fa fa-trash fa-1d5x myRed"></i>
+            </button>
+            <button ion-button icon-only (click)="addItem()">
+                <i class="fa fa-plus fa-1d5x"></i>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+
+</ion-header>
+<ion-content>
+    <ion-list>
+        <ion-item-sliding #item *ngFor="let listItem of items">
+            <ion-item color="myDark" (click)="updateItem(item, listItem)">
+                <div>
+                    <div style="width: 80%; float: left">
+                        {{listItem.name}}
+                    </div>
+                    <div style="width: 15%; float: right; text-align: right;" [ngStyle]="{'color' : listItem.isDone == 1 ? '#79B343' : '#FFFFFF'}">
+                        <i class="fa fa-check"></i>
+                    </div>
+                </div>
+                <div style="clear: both"></div>
+            </ion-item>
+
+            <ion-item-options side="right">
+                <button ion-button color="myRed" (click)="deleteItem(item, listItem)"><i class="fa fa-trash fa-1d5x"></i></button>
+            </ion-item-options>
+        </ion-item-sliding>
+        <ion-item color="myDark" *ngIf="items.length == 0">
+            Your shopping list is empty...
+        </ion-item>
+    </ion-list>
+</ion-content>

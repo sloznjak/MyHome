@@ -1,0 +1,129 @@
+<ion-header>
+    <ion-navbar color="myDark">
+        <button ion-button menuToggle>
+            <ion-icon name="menu" color="myGreen"></ion-icon>
+        </button>
+        <ion-title>Welcome {{user.firstName}} {{user.lastName}}</ion-title>
+        <!--<ion-buttons end>-->
+            <!--<button ion-button icon-only (click)="openArduino()">-->
+                <!--<i class="fa fa-gears fa-1d5x"></i>-->
+            <!--</button>-->
+        <!--</ion-buttons>-->
+    </ion-navbar>
+</ion-header>
+
+<ion-content color="myDarkLight">
+    <ion-card color="myDark">
+        <ion-card-header>
+            <div style="width: 90%; float: left;"  (click)="openTasks()">
+                Tasks for today
+            </div>
+            <div style="width: 10%; float: right;">
+                <i class="fa fa-plus" style="float: right" (click)="addTask();"></i>
+            </div>
+        </ion-card-header>
+        <ion-card-content *ngIf="tasksForToday.length > 0">
+            <ion-list>
+                <ion-item-sliding #item color="myDarkLight" *ngFor="let task of tasksForToday">
+                    <ion-item color="myDarkLight">
+                        <div>
+                            <div style="width: 25%; float: left">
+                                {{task.date | date:'shortTime'}}
+                            </div>
+                            <div style="width: 75%; float: left">
+                                {{task.description}}
+                            </div>
+                        </div>
+                        <div style="clear: both"></div>
+                    </ion-item>
+                    <ion-item-options side="left">
+                        <button ion-button color="myGreen" (click)="updateTask(task)"><i class="fa fa-check fa-1d5x"></i></button>
+                    </ion-item-options>
+
+                    <ion-item-options side="right">
+                        <button ion-button color="myRed" (click)="deleteTask(task)"><i class="fa fa-trash fa-1d5x"></i></button>
+                    </ion-item-options>
+                </ion-item-sliding>
+            </ion-list>
+        </ion-card-content>
+        <ion-card-content *ngIf="tasksForToday.length == 0">
+            You have no tasks for today...
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card color="myDark">
+        <ion-card-header>
+            <div style="width: 90%; float: left;" (click)="openAccounts()">
+                Accounts
+            </div>
+            <div style="width: 10%; float: right;">
+                <i class="fa fa-plus" style="float: right" (click)="addAccount();"></i>
+            </div>
+        </ion-card-header>
+        <ion-card-content *ngIf="accounts.length > 0">
+            <ion-list>
+                <ion-item-sliding #item *ngFor="let account of accounts">
+                    <ion-item color="myDarkLight"  class="my-item-padding">
+                        <div style="margin-bottom: 10px; clear: both;">
+                            {{account.name}}
+                        </div>
+                        <div style="width: 50%; float:left;">
+                            Total:
+                        </div>
+                        <div style="width: 50%; float:right; text-align: right;" [ngStyle]="{'color' : account.amount >= 0 ? '#79B343':'#FC0F3C'}">
+                            {{account.amount}} KN
+                        </div>
+                        <div style="clear: both;"></div>
+                    </ion-item>
+                    <ion-item-options side="left">
+                        <button ion-button color="myGreen" (click)="addToAccount(account, item)"><i class="fa fa-plus fa-1d5x"></i></button>
+                    </ion-item-options>
+
+                    <ion-item-options side="right">
+                        <button ion-button color="myRed" (click)="removeFromAccount(account, item)"><i class="fa fa-minus fa-1d5x"></i></button>
+                    </ion-item-options>
+                </ion-item-sliding>
+            </ion-list>
+        </ion-card-content>
+        <ion-card-content *ngIf="accounts.length == 0">
+            You have no account added...
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card color="myDark">
+        <ion-card-header>
+            <div style="width: 90%; float: left;" (click)="openItems()">
+                Shopping list
+            </div>
+            <div style="width: 10%; float: right;">
+                <i class="fa fa-plus" style="float: right" (click)="addItem();"></i>
+            </div>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-list>
+                <ion-item-sliding #item *ngFor="let listItem of items">
+                    <ion-item color="myDarkLight" (click)="updateItem(item, listItem)">
+                        <div>
+                            <div style="width: 80%; float: left">
+                                {{listItem.name}}
+                            </div>
+                            <div style="width: 15%; float: right; text-align: right;" [ngStyle]="{'color' : listItem.isDone == 1 ? '#79B343' : '#FFFFFF'}">
+                                <i class="fa fa-check"></i>
+                            </div>
+                        </div>
+                        <div style="clear: both"></div>
+                    </ion-item>
+                    <ion-item-options side="right">
+                        <button ion-button color="myRed" (click)="deleteItem(item, listItem)"><i class="fa fa-trash fa-1d5x"></i></button>
+                    </ion-item-options>
+                </ion-item-sliding>
+            </ion-list>
+        </ion-card-content>
+        <ion-card-content *ngIf="items.length == 0">
+            Your shopping list is empty...
+        </ion-card-content>
+    </ion-card>
+
+</ion-content>
+
+<my-spinner *ngIf="isLoading"></my-spinner>

@@ -1,0 +1,34 @@
+<div class="my-modal">
+    <ion-card color="myDark">
+        <ion-card-header>
+            <div style="width: 90%; float: left;">
+                Add new task
+            </div>
+            <div style="width: 10%; float: right;">
+                <i class="fa fa-close" style="float: right" (click)="dismiss()"></i>
+            </div>
+            <div style="clear: both"></div>
+        </ion-card-header>
+    </ion-card>
+
+    <ion-list>
+        <ion-item color="myDark">
+            <ion-label floating>Task description</ion-label>
+            <ion-input type="text" value=""[(ngModel)]="description"></ion-input>
+        </ion-item>
+        <ion-item color="myDark">
+            <ion-label floating>Date</ion-label>
+            <ion-datetime displayFormat="MMM DD YYYY" max="{{maxDate}}"  [(ngModel)]="event.date"></ion-datetime>
+        </ion-item>
+        <ion-item color="myDark">
+            <ion-label floating>Time</ion-label>
+            <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="event.time"></ion-datetime>
+        </ion-item>
+        <br>
+        <button ion-button color="myGreen" class="myButtonAdd" (click)="addTask()">Add task</button>
+        <button ion-button color="myRed" class="myButtonCancle" (click)="cancle()">Cancle</button>
+        <div style="clear: both; margin-bottom: 10px"></div>
+    </ion-list>
+</div>
+
+<my-spinner *ngIf="isLoading"></my-spinner>

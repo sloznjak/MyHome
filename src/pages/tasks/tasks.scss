@@ -1,0 +1,59 @@
+$myDark:        #282828;
+$myGreen:       #79B343;
+$myRed:         #FC0F3C;
+$myDarkLight:   #404040;
+$myLight:       #808080;
+
+page-tasks {
+    .fa-1d5x{
+        font-size: 1.5em;
+    }
+
+    div.scroll-content{
+        background-color: $myDarkLight;
+    }
+
+    .card-header.card-header-md{
+        padding: 10px;
+    }
+
+    .card-content.card-content-md{
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-bottom: 0px;
+        background-color: $myDark;
+    }
+
+    ion-label.label.label-md{
+        margin: 0px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    ion-item.item-block.item.item-md{
+        padding:0px;
+    }
+
+    .list-md ion-item-sliding{
+        margin-bottom:5px;
+    }
+
+    .list-md ion-item-options{
+        background-color: $myDarkLight;
+        border-color: $myDarkLight;
+    }
+
+    button{
+        margin-left:5px;
+        margin-right:5px;
+    }
+
+    i{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}

@@ -1,0 +1,72 @@
+my-remove-from-account{
+    $myDark:        #282828;
+    $myGreen:       #79B343;
+    $myRed:         #FC0F3C;
+    $myDarkLight:   #404040;
+    $myLight:       #808080;
+
+    background-color: rgba(0,0,0,0.8);;
+    padding: 16px;
+
+    .my-modal{
+        background-color: $myDark;
+    }
+
+    .card.card-md.card-md-myDark{
+        margin: 0px;
+        width: 100%;
+    }
+
+    .card-header.card-header-md{
+        padding: 10px;
+    }
+
+    .card-content.card-content-md{
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        background-color: $myDarkLight;
+    }
+
+    ion-label.label.label-md{
+        margin: 0px;
+    }
+
+    .item-md{
+        padding: 5px;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .list-md{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    ion-list .item .item-inner .input-wrapper ion-label{
+        color: white;
+    }
+
+    .myButtonAdd{
+        width:47%;
+        margin-left: 2%;
+        margin-right: 1%;
+        float: left;
+    }
+
+    .myButtonCancle{
+        width:47%;
+        margin-left: 1%;
+        margin-right: 2%;
+        float: left;
+    }
+
+    .picker-opt{
+        color:white;
+    }
+
+}

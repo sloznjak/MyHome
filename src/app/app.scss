@@ -1,0 +1,54 @@
+// http://ionicframework.com/docs/v2/theming/
+$myDark:        #282828;
+$myGreen:       #79B343;
+$myRed:         #FC0F3C;
+$myDarkLight:   #404040;
+$myLight:       #808080;
+
+div.toast-wrapper.toast-top{
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 10px;
+    width:96%;
+    background-color: $myRed;
+    color: #fff;
+}
+
+div.toast-wrapper.toast-bottom{
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 10px;
+    width:96%;
+    background-color: $myGreen;
+    color: #fff;
+}
+
+.picker-opt{
+    color:white;
+}
+
+.picker-toolbar{
+    background-color: $myDark!important;
+}
+
+.picker-columns{
+    background-color: $myDarkLight;
+}
+
+.back-button-icon-md{
+    color: $myGreen;
+}
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.

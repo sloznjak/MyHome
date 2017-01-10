@@ -1,0 +1,57 @@
+page-items {
+    $myDark:        #282828;
+    $myGreen:       #79B343;
+    $myRed:         #FC0F3C;
+    $myDarkLight:   #404040;
+    $myLight:       #808080;
+
+    .myRed{
+        color: $myRed;
+    }
+
+    .fa-1d5x{
+        font-size: 1.5em;
+    }
+
+    div.scroll-content{
+        background-color: $myDarkLight;
+    }
+
+    ion-list{
+        padding:10px;
+    }
+
+    ion-label.label.label-md{
+        margin: 0px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    ion-item.item-block.item.item-md{
+        padding:5px;
+    }
+
+    .item-inner{
+        border:0px!important;
+        padding-right: 0px !important;
+    }
+
+    .list-md ion-item-sliding{
+        margin-bottom:5px;
+    }
+
+    .list-md ion-item-options{
+        background-color: $myDark;
+        border-color: $myDark;
+    }
+
+    button{
+        margin-left:5px;
+        margin-right:5px;
+    }
+
+    i{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}

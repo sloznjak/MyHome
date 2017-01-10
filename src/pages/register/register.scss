@@ -1,0 +1,38 @@
+page-register {
+  $myDark:        #282828;
+  $myGreen:       #79B343;
+  $myRed:         #FC0F3C;
+  $myDarkLight:   #404040;
+  $myLight:       #808080;
+
+    img{
+      width:80%;
+      display: block;
+      margin: 0 auto;
+    }
+
+    div.scroll-content{
+      background-color: $myDark;
+    }
+
+    .item-md{
+      padding: 0px;
+    }
+
+    ion-list .item .item-inner .input-wrapper ion-label{
+      color: white;
+    }
+
+    .myButton{
+      margin-bottom: 10px;
+    }
+
+    .errorMsg{
+        background-color: $myRed;
+        color: #fff;
+        margin-left: 0px;
+        margin-right: 0px;
+        width: 100%;
+    }
+
+}

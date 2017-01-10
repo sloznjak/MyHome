@@ -1,0 +1,34 @@
+<div class="my-modal">
+    <ion-card color="myDark">
+        <ion-card-header>
+            <div style="width: 90%; float: left;">
+                Remove money from account
+            </div>
+            <div style="width: 10%; float: right;">
+                <i class="fa fa-close" style="float: right" (click)="dismiss()"></i>
+            </div>
+            <div style="clear: both"></div>
+        </ion-card-header>
+    </ion-card>
+
+    <ion-list>
+        <ion-item color="myDark">
+            <ion-label floating>Account name</ion-label>
+            <ion-input type="text" value=""[(ngModel)]="name" readOnly="true"></ion-input>
+        </ion-item>
+        <ion-item color="myDark">
+            <ion-label floating>Description</ion-label>
+            <ion-input type="text" value=""[(ngModel)]="description"></ion-input>
+        </ion-item>
+        <ion-item color="myDark">
+            <ion-label floating>Account amount</ion-label>
+            <ion-input type="text" value=""[(ngModel)]="amount"></ion-input>
+        </ion-item>
+        <br>
+        <button ion-button color="myGreen" class="myButtonAdd" (click)="removeFromAoccount()">Remove Money</button>
+        <button ion-button color="myRed" class="myButtonCancle" (click)="cancle()">Cancle</button>
+        <div style="clear: both; margin-bottom: 10px"></div>
+    </ion-list>
+</div>
+
+<my-spinner *ngIf="isLoading"></my-spinner>
